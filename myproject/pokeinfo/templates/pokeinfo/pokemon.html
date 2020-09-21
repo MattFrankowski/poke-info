@@ -1,13 +1,54 @@
 {% extends "pokeinfo/base.html" %}
 
 {% block content %}
-    <h4>{{ pokemon.name }}</h4>
-    <h4>{{ pokemon.base_experience }}</h4>
-    <h4>{{ pokemon.height }}</h4>
-    <h4>{{ pokemon.weight }}</h4>
-    <h4>{{ pokemon.abilities }}</h4>
-    <h4>{{ pokemon.sprites }}</h4>
-    <h4>{{ pokemon.species }}</h4>
-    <h4>{{ pokemon.stats }}</h4>
-    <h4>{{ pokemon.types }}</h4>
+    <div class="container-fluid">
+        <div class="row justify-content-md-center p-3">
+            <div class="col-md-5 border">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <img src="{{ pokemon.sprites.0 }}" alt="front pokemon image">
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <p class="display-4">{{ pokemon.name }}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ pokemon.sprites.1 }}" alt="back pokemon image">
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-6">
+                       <p>Height: {{ pokemon.height }}</p>
+                       <p>Base experience: {{ pokemon.base_experience }}</p>
+                       <div>
+                           <p>Abilities:</p>
+                           {% for ability in pokemon.abilities %}
+                            <ul>
+                                <li>{{ ability }}</li>
+                            </ul>
+                           {% endfor %}
+                       </div>
+                        <div>
+                            <p>Type:</p>
+                            {% for type in pokemon.types %}
+                                <ul>
+                                    <li>{{ type }}</li>
+                                </ul>
+                           {% endfor %}
+                        </div>
+                   </div>
+                    <div class="col-md-6">
+                            <p>Weight: {{ pokemon.weight }}</p>
+                        <div>
+                            <p>Stats:</p>
+                            {% for stat in pokemon.stats %}
+                                <ul>
+                                    <li>{{ stat.0 }}: {{ stat.1 }}</li>
+                                </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

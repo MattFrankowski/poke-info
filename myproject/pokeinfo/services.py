@@ -3,13 +3,13 @@ import requests
 
 def get_pokemon(name):
     """
-    Fetch Pokemon data from an PokeAPI.
+    Fetch and process Pokemon data from an PokeAPI.
     """
     base_url = "https://pokeapi.co/api/v2/pokemon/"
     response = requests.get(f"{base_url}{name}")
     pokemon = response.json()
     pokemon_info = {
-        "name": pokemon["name"],
+        "name": pokemon["name"].capitalize(),
         "base_experience": pokemon["base_experience"],
         "height": pokemon["height"],
         "weight": pokemon["weight"],
@@ -45,7 +45,7 @@ def get_custom_stats(stats):
     """
     stats_list = []
     for item in stats:
-        stats_list.append([item["base_stat"], item["stat"]["name"]])
+        stats_list.append([item["stat"]["name"], item["base_stat"]])
     return stats_list
 
 
