@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import IndexView
+from .views import PokemonView
 
 urlpatterns = [
-    path('', IndexView.as_view(), name="index")
+    path('pokemon/<str:name>', PokemonView.as_view(), name="pokemon")
 ]
