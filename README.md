@@ -3,10 +3,16 @@ Website that allows to search any Pokémon and see its detailed information.
 
 Pokémon data is fetched from PokéAPI.
 
+
 |                     Index Page                     |                    Pokemon Page                    |
 | -------------------------------------------------- | -------------------------------------------------- |
 |        <img src="screenshots/index_page.png">      |        <img src="screenshots/pokemon_page.png">      |
 
+## Technology Stack
+* Python
+* Django
+* HTML/CSS
+* Bootstrap
 
 ## Setup
 To run this project locally clone this repository:
