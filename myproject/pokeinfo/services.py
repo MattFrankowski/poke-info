@@ -34,7 +34,7 @@ def get_custom_abilities(abilities):
 
 def get_pokemon_img(sprites):
     """
-    Return list with two images urls.
+    Return list with 2 images urls.
     """
     return [sprites["front_default"], sprites["back_default"]]
 
