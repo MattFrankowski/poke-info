@@ -16,6 +16,10 @@
                     </div>
                     <div class="col-md-6 mt-2">
                         <p class="name mt-2">{{ pokemon.name }}</p>
+                        {% for pokemon in evolution_list %}
+                            {{ pokemon }}
+                        {% endfor %}
+
                     </div>
                     <div class="col-md-3">
                         <img src="{{ pokemon.sprites.1 }}" alt="back pokemon image">

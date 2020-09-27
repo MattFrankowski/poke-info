@@ -8,6 +8,7 @@ def get_pokemon(name):
     base_url = "https://pokeapi.co/api/v2/pokemon/"
     response = requests.get(f"{base_url}{name}")
     pokemon = response.json()
+
     pokemon_info = {
         "name": pokemon["name"].capitalize(),
         "base_experience": pokemon["base_experience"],
@@ -57,8 +58,5 @@ def get_custom_types(types):
     for item in types:
         types_list.append(item["type"]["name"])
     return types_list
-
-
-
 
 

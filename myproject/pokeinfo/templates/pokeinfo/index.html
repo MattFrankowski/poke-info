@@ -1,6 +1,11 @@
 {% extends "pokeinfo/base.html" %}
 
+{% load static %}
 {% load crispy_forms_tags %}
+
+{% block scripts %}
+    <script src="{% static "js/index.js" %}"></script>
+{% endblock %}
 
 {% block title %}
     <title>
@@ -17,10 +22,37 @@
                 <div class="col-md-3">
                     {{ form.name|as_crispy_field }}
                 </div>
-                <div class="col-md-2">
-                    <input type="submit" class="btn btn-success" value="Search Pokémon">
+                <div class="col-md-3">
+                    <input type="submit" class="btn btn-success w-100" value="Search Pokémon">
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="text-center text-white">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
     </form>
+
+    <div class="container-fluid">
+        <div class="row justify-content-md-center p-3">
+            <div class="col-md-6 text-center">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">
+                        <i class="fas fa-arrow-circle-down"></i>
+                        How it works?
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis explicabo laudantium neque nulla numquam quaerat quas quisquam voluptatem. A amet, animi error eveniet excepturi natus perspiciatis quasi reprehenderit ullam? Aliquid amet aspernatur, atque, beatae cum dolore dolorem doloribus, eligendi id inventore iste minima odit quibusdam quo vitae voluptate voluptatibus. Incidunt.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
