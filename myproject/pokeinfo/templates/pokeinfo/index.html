@@ -1,6 +1,11 @@
 {% extends "pokeinfo/base.html" %}
 
+{% load static %}
 {% load crispy_forms_tags %}
+
+{% block scripts %}
+    <script src="{% static "js/index.js" %}"></script>
+{% endblock %}
 
 {% block title %}
     <title>
@@ -17,10 +22,45 @@
                 <div class="col-md-3">
                     {{ form.name|as_crispy_field }}
                 </div>
-                <div class="col-md-2">
-                    <input type="submit" class="btn btn-success" value="Search Pokémon">
+                <div class="col-md-3">
+                    <input type="submit" class="btn btn-success w-100" value="Search Pokémon">
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="text-center text-white">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
     </form>
+
+    <div class="container-fluid">
+        <div class="row justify-content-md-center p-3">
+            <div class="col-md-6 text-center">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">
+                        <i class="fas fa-arrow-circle-down"></i>
+                        How it works?
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <p class="p-3">PokéInfo fetches Pokémon information with the usage of PokéAPI. To display any Pokémon statistics simply type its name in the form above.</p><hr>
+                        <p>Technologies used in this project:</p>
+                        <ul>
+                            <li>Django</li>
+                            <li>HTML/CSS</li>
+                            <li>JavaScript</li>
+                            <li>Bootstrap</li>
+                        </ul>
+                        <p><a href="https://github.com/MattFrankowski/poke-info">GitHub repository.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

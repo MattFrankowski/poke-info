@@ -10,48 +10,47 @@
     <div class="container-fluid p-3">
         <div class="row justify-content-md-center p-3">
             <div class="col-md-8">
-                <div class="row text-center red text-white">
-                    <div class="col-md-3 red text-white">
+                <div class="row text-center oceanblue text-white p-3">
+                    <div class="col-md-3 oceanblue text-white">
                         <img src="{{ pokemon.sprites.0 }}" alt="front pokemon image">
                     </div>
-                    <div class="col-md-6 mt-2">
-                        <p class="name mt-2">{{ pokemon.name }}</p>
+                    <div class="col-md-6 text-center">
+                        <p class="name mt-3">{{ pokemon.name }}</p>
                     </div>
                     <div class="col-md-3">
                         <img src="{{ pokemon.sprites.1 }}" alt="back pokemon image">
                     </div>
                 </div>
                 <div class="row">
-                   <div class="col-md-6 pb-3 red text-white">
-                   <p>Height: {{ pokemon.height }}</p>
-                        <p>Weight: {{ pokemon.weight }}</p>
-                        <p>Base experience: {{ pokemon.base_experience }}</p>
-                        <div>
-                            <p>Stats:</p>
-                            {% for stat in pokemon.stats %}
-                                <ul>
-                                    <li>{{ stat.0 }}: {{ stat.1 }}</li>
-                                </ul>
-                            {% endfor %}
+                    <div class="col-md-4 oceanblue text-white">
+                        <p class="lightskyblue p-1 text-center attribute">Height: {{ pokemon.height }}</p>
+                    </div>
+                    <div class="col-md-4 oceanblue text-white">
+                        <p class="lightskyblue p-1 text-center attribute">Weight: {{ pokemon.weight }}</p>
+                    </div>
+                    <div class="col-md-4 oceanblue text-white">
+                        <p class="lightskyblue p-1 text-center attribute">Base exp.: {{ pokemon.base_experience }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for stat in pokemon.stats %}
+                        <div class="col-md-4 oceanblue text-white pb-3">
+                            <p class="red h-100 p-1 text-center attribute">{{ stat.0 }}: {{ stat.1 }}</p>
                         </div>
-                   </div>
-                    <div class="col-md-6 pb-3 red text-white">
-                        <div>
-                            <p>Type:</p>
-                            {% for type in pokemon.types %}
-                                <ul>
-                                    <li>{{ type }}</li>
-                                </ul>
-                           {% endfor %}
-                        </div>
-                        <div>
-                            <p>Abilities:</p>
-                            {% for ability in pokemon.abilities %}
-                                <ul>
-                                    <li>{{ ability }}</li>
-                                </ul>
-                            {% endfor %}
-                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col-md-6 oceanblue text-white text-center">
+                        <p>Types:</p>
+                        {% for type in pokemon.types %}
+                            <p class="forestgreen p-1 attribute">{{ type }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-6 oceanblue text-white text-center">
+                        <p>Abilities:</p>
+                        {% for ability in pokemon.abilities %}
+                            <p class="darkorange p-1 attribute">{{ ability }}</p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
