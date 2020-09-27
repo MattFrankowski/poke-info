@@ -9,8 +9,34 @@ ul{
     list-style: none
 }
 
+.attribute{
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    transition: transform .2s;
+}
+
+.attribute:hover {
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.oceanblue{
+    background-color: #0077be;
+}
+
 .red{
     background-color: red;
+}
+
+.forestgreen{
+    background-color: forestgreen;
+}
+
+.darkorange{
+    background-color: darkorange;
+}
+
+.lightskyblue{
+    background-color: lightskyblue;
 }
 
 .light-container{
@@ -18,12 +44,13 @@ ul{
 }
 
 .name{
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 /* Dropdown Button */
 .dropbtn {
     display: block;
+    border: none;
     width: 100%;
     background-color: #3498DB;
     color: white;
