@@ -1,5 +1,5 @@
-# PokeInfo - in development
-Website that allows to search any Pokémon and see its detailed information.
+# PokeInfo
+Website that allows to search for any Pokémon and see its detailed information.
 
 Pokémon data is fetched from PokéAPI.
 
@@ -9,10 +9,11 @@ Pokémon data is fetched from PokéAPI.
 |        <img src="screenshots/index_page.png">      |        <img src="screenshots/pokemon_page.png">      |
 
 ## Technology Stack
-* Python
 * Django
+* REST API
 * HTML/CSS
-* Bootstrap
+* JavaScript
+* Bootstrap 4
 
 ## Setup
 To run this project locally clone this repository:
